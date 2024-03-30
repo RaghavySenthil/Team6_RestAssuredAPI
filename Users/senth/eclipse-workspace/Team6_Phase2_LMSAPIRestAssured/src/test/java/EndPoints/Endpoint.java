@@ -25,5 +25,7 @@ public class Endpoint extends ConfigReader{
 	public static String Post_Login= "/login";
 		
 	public static String Excelpath = ".\\src\\test\\resources\\Test_Data\\LMS_valid_data.xlsx";
+	public static String BatchmoduleExcelpath = ".\\src\\test\\resources\\Test_Data\\LMS_Batchmodule.xlsx";
 	}
 //C:\Users\senth\eclipse-workspace\Team6_Phase2_LMSAPIRestAssured\src\test\resources\Test_Data\LMS_valid_data.xlsx
+//C:\Users\senth\eclipse-workspace\Team6_Phase2_LMSAPIRestAssured\src\test\resources\Test_Data\LMS_Batchmodule.xlsx

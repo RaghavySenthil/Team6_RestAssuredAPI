@@ -132,6 +132,7 @@ public class User_Module {
 	@When("Admin sends HTTPS Request with endpoint")
 	public void admin_sends_https_request_with_endpoint() {
 		ValidDataResponse.then().log().all();
+		
 	}
 
 	@Then("Admin receives {int} Created Status with response body.")

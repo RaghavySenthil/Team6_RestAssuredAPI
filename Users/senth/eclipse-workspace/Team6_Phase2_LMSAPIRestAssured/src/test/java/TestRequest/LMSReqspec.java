@@ -30,7 +30,24 @@ public static RequestSpecification PostValidData() {
 		req.setContentType(ContentType.JSON);
 		return res;
 	}
+public static RequestSpecification BatchModulePostValidData() {
 	
+	
+	req.setBaseUri(Endpoint.BaseURL);
+	RequestSpecification res = req.build();
+	req.setBasePath(Endpoint.Post_CreateNewBatch);
+	req.setContentType(ContentType.JSON);
+	return res;
+}
+public static RequestSpecification Batchmoduleexistingdata() {
+	
+	
+	req.setBaseUri(Endpoint.BaseURL);
+	RequestSpecification res = req.build();
+	req.setBasePath(Endpoint.Post_CreateNewBatch);
+	req.setContentType(ContentType.JSON);
+	return res;
+}
 	/*private static RequestSpecBuilder req = new RequestSpecBuilder()
             .setBaseUri(Endpoint.BaseURL)
             .setContentType(ContentType.JSON);
