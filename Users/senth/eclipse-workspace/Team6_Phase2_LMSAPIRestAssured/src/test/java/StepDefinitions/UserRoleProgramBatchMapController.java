@@ -1,4 +1,4 @@
-package StepDefinition;
+package StepDefinitions;
 
 public class UserRoleProgramBatchMapController {
 

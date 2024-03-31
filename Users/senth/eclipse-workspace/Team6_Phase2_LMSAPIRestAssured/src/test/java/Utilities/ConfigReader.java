@@ -24,8 +24,8 @@ public class ConfigReader {
     		
     		 prop = new Properties();
     		
-    		 FileInputStream ip = new FileInputStream("C:\\Users\\senth\\eclipse-workspace\\Team3_API_Bootcamp_UserAPI\\src\\main\\resources\\UserConfigfile\\UserConfig.properties");
-    		 prop.load(ip);
+    		 FileInputStream ip = new FileInputStream("C:\\Users\\14044\\git\\Team6_RestAssuredAPI\\Users\\senth\\eclipse-workspace\\Team6_Phase2_LMSAPIRestAssured\\src\\test\\resources\\UserConfigfile\\UserConfig.properties");
+        		 prop.load(ip);
     		
     	 }
          catch(NullPointerException nullPointer) {
