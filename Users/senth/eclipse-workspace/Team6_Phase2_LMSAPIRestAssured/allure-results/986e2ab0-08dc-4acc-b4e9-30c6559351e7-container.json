@@ -1,0 +1,1 @@
+{"uuid":"986e2ab0-08dc-4acc-b4e9-30c6559351e7","name":"Scenario: Check if admin is able to update role status of a Admin with invalid endpoint","children":["1f7f4683-4e03-4979-ae8c-a9f353bedd9a"],"befores":[],"afters":[],"start":1711897695181,"stop":1711897698157}

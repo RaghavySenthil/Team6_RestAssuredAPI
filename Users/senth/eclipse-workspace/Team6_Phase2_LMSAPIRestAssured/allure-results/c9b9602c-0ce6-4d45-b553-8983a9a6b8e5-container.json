@@ -1,0 +1,1 @@
+{"uuid":"c9b9602c-0ce6-4d45-b553-8983a9a6b8e5","name":"Scenario: Check if admin is able to update role status of a Admin with valid and invalid Admin id or invalid role status","children":["aea1e8f6-eed7-4f3f-af14-592f7208670f"],"befores":[],"afters":[],"start":1711810642002,"stop":1711810652006}
