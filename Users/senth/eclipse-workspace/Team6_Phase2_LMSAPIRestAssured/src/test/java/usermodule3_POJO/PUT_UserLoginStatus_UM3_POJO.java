@@ -2,7 +2,7 @@ package usermodule3_POJO;
 
 import java.util.List;
 
-public class PUT_UserLoginStatus_POJO {
+public class PUT_UserLoginStatus_UM3_POJO {
 private String loginStatus;
 private String password;
 private List<String> roleIds;

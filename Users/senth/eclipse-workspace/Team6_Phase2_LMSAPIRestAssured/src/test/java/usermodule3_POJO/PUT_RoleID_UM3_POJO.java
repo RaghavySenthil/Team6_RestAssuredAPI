@@ -2,7 +2,7 @@ package usermodule3_POJO;
 
 import java.util.List;
 
-public class PUT_RoleID_POJO {
+public class PUT_RoleID_UM3_POJO {
 
 	private List<String> userRoleList;
 

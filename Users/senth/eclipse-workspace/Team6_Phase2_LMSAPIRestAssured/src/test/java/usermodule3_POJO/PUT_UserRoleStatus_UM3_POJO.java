@@ -1,6 +1,6 @@
 package usermodule3_POJO;
 
-public class PUT_UserRoleStatus_POJO {
+public class PUT_UserRoleStatus_UM3_POJO {
 	private String roleId;
 	private String userRoleStatus;
 	
