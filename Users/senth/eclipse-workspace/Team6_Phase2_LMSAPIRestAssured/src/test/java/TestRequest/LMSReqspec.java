@@ -48,44 +48,107 @@ public static RequestSpecification Batchmoduleexistingdata() {
 	req.setContentType(ContentType.JSON);
 	return res;
 }
-	/*private static RequestSpecBuilder req = new RequestSpecBuilder()
-            .setBaseUri(Endpoint.BaseURL)
-            .setContentType(ContentType.JSON);
-
-    public static RequestSpecification UserLogin() {
-        return req.setBasePath(Endpoint.Post_Login).build();
-    }*/
-
-    /*public static RequestSpecification InvalidGetAllUser() {
-        return req.setBasePath(Endpoint.NegativeGET_AllUsers).build();
-    }
-
-    public static RequestSpecification PostValidData() {
-        return req.setBasePath(Endpoint.Post_CreateUser).build();
-    }
-
-    public static RequestSpecification PostINValidData() {
-        return req.setBasePath(Endpoint.Post_CreateUser).build();
-    }
-
-    public static RequestSpecification GetUserbyID() {
-        return req.setBasePath(Endpoint.GET_userbyUSER_ID).build();
-    }
-
-    public static RequestSpecification GET_userbyFN() {
-        return req.setBasePath(Endpoint.GET_userbyFN).build();
-    }
-
-    public static RequestSpecification DeleteByUserID() {
-        return req.setBasePath(Endpoint.Delete_UserByuserID).build();
-    }
-
-    public static RequestSpecification DeleteByName() {
-        return req.setBasePath(Endpoint.Delete_UserByuserFN).build();
-    }
-
-    public static RequestSpecification Putvaliddata() {
-        return req.setBasePath(Endpoint.PUT_Updateuser).build();
-    }*/
+public static RequestSpecification Invalidendpoint_Batches() {
+	
+	
+	req.setBaseUri(Endpoint.BaseURL);
+	RequestSpecification res = req.build();
+	req.setBasePath(Endpoint.Invalidendpoint_Batches);
+	req.setContentType(ContentType.JSON);
+	return res;
+}
+public static RequestSpecification GetAllbatch() {
+	
+	
+	req.setBaseUri(Endpoint.BaseURL);
+	RequestSpecification res = req.build();
+	req.setBasePath(Endpoint.GET_AllBatches);
+	req.setContentType(ContentType.JSON);
+	return res;
 }
 
+public static RequestSpecification getInvalidendpoint_Batches() {
+	
+	
+	req.setBaseUri(Endpoint.BaseURL);
+	RequestSpecification res = req.build();
+	req.setBasePath(Endpoint.Invalidendpoint_Batches);
+	req.setContentType(ContentType.JSON);
+	return res;
+}
+public static RequestSpecification GET_BatchbyBatchId() {
+	
+	
+	req.setBaseUri(Endpoint.BaseURL);
+	RequestSpecification res = req.build();
+	req.setBasePath(Endpoint.GET_BatchbyBatchId);
+	req.setContentType(ContentType.JSON);
+	return res;
+}
+public static RequestSpecification Delete_BatchbyBatchId() {
+	
+	
+	req.setBaseUri(Endpoint.BaseURL);
+	RequestSpecification res = req.build();
+	req.setBasePath(Endpoint.Delete_batchbyBatchId);
+	req.setContentType(ContentType.JSON);
+	return res;
+}
+
+public static RequestSpecification Delete_InvalidBatchbyBatchId() {
+	
+	
+	req.setBaseUri(Endpoint.BaseURL);
+	RequestSpecification res = req.build();
+	req.setBasePath(Endpoint.Delete_InvalidBatchbyBatchId);
+	req.setContentType(ContentType.JSON);
+	return res;
+}
+public static RequestSpecification Delete_InvalidBatchId() {
+	
+	
+	req.setBaseUri(Endpoint.BaseURL);
+	RequestSpecification res = req.build();
+	req.setBasePath(Endpoint.Delete_InvalidBatchId);
+	req.setContentType(ContentType.JSON);
+	return res;
+}
+
+public static RequestSpecification GET_BatchbyBatchName() {
+	
+	
+	req.setBaseUri(Endpoint.BaseURL);
+	RequestSpecification res = req.build();
+	req.setBasePath(Endpoint.GET_BatchbyBatchName);
+	
+	req.setContentType(ContentType.JSON);
+	return res;
+}
+public static RequestSpecification GET_BatchbyPgmID() {
+	
+	
+	req.setBaseUri(Endpoint.BaseURL);
+	RequestSpecification res = req.build();
+	req.setBasePath(Endpoint.GET_BatchbyProgramId);
+	
+	req.setContentType(ContentType.JSON);
+	return res;
+}
+public static RequestSpecification Put_batchID() {
+	
+	
+	req.setBaseUri(Endpoint.BaseURL);
+	RequestSpecification res = req.build();
+	req.setBasePath(Endpoint.PUT_UpdatebyBatch_Id);
+	
+	req.setContentType(ContentType.JSON);
+	return res;
+}
+
+
+
+
+
+
+
+}

@@ -24,8 +24,8 @@ import io.restassured.response.Response;
 
 public class User_Module {
 	Response ValidDataResponse;
-	String token;
-	Object retrievedToken =LMSTestRunner.scenarioContext.getContext("Token", token);
+	String retrievedToken;
+	//Object retrievedToken =LMSTestRunner.scenarioContext.getContext("Token", token);
 	@Given("Admin creates POST request with all mandatory fields")
 	public void admin_creates_post_request_with_all_mandatory_fields() throws InvalidFormatException, IOException {
 		// Retrieve data from Excel file
@@ -89,6 +89,7 @@ public class User_Module {
 					    "\"userVisaStatus\": \""+ userVisaStatus + "\"" +
 					"}";
 					System.out.println(userInfoJson);
+					String retrievedToken = UserLoginController.token;
 					ValidDataResponse = RestAssured
 							.given().header("Authorization","Bearer "+retrievedToken)
 				    		.spec(LMSReqspec.PostValidData()).body(userInfoJson)
@@ -142,34 +143,5 @@ public class User_Module {
 	    		   .getResourceAsStream("UsermoduleSchema.json")));
 	}
 
-	@Given("Admin creates POST request with all mandatory fields and additional fields")
-	public void admin_creates_post_request_with_all_mandatory_fields_and_additional_fields() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
-	}
-
-	@Then("Admin receives {int} Bad Request Status with message and boolean success details.")
-	public void admin_receives_bad_request_status_with_message_and_boolean_success_details(Integer int1) {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
-	}
-
-	@Given("Admin creates POST request with missing mandatory fields in request body")
-	public void admin_creates_post_request_with_missing_mandatory_fields_in_request_body() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
-	}
-
-	@Then("Admin receives {int} Bad Request Status with error message.")
-	public void admin_receives_bad_request_status_with_error_message(Integer int1) {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
-	}
-
-	@Then("Admin receives status {int} with Unauthorized message.")
-	public void admin_receives_status_with_unauthorized_message(Integer int1) {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
-	}
-
+	
 }

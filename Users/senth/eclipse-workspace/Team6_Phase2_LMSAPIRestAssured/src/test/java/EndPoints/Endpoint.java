@@ -1,4 +1,6 @@
 package EndPoints;
+import StepDefinition.ProgramBatch_Module;
+import TestRunner.LMSTestRunner;
 import Utilities.ConfigReader;
 
 public class Endpoint extends ConfigReader{
@@ -10,13 +12,17 @@ public class Endpoint extends ConfigReader{
 	//Program Batch Module--Endpoints
 	public static String Post_CreateNewBatch = "/batches";
 	public static String GET_AllBatches = "/batches";
-	public static String NegativeGET_AllBatches = "/batches1";
-	public static String GET_BatchbyBatchId = "/batches/batchId/{batchId}";
+	public static String Invalidendpoint_Batches = "/batches1";
+	public static String GET_BatchbyBatchId = "/batches/batchId/8573";
+	
+	 
 	public static String GET_BatchbyBatchName = "/batches/batchName/{batchName}";
 	public static String GET_BatchbyProgramId = "/batches/program/{programId}";
 	public static String PUT_UpdatebyBatch_Id = "/batches/{batchId}";
-	public static String Delete_batchbyBatchId = "/batches/{id}";
 	
+	public static String Delete_batchbyBatchId = "/batches/{batchId}";
+	public static String Delete_InvalidBatchbyBatchId ="/batches/{batchId}";
+	public static String Delete_InvalidBatchId = "/batches1/8421";
 	//User Module--Endpoints
 	public static String Post_CreatingUserwithRole= "/users/roleStatus";
 	

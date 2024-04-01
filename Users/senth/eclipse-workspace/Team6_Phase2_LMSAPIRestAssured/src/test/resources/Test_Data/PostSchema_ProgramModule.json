@@ -1,0 +1,44 @@
+{
+	"definitions": {},
+	"$schema": "http://json-schema.org/draft-07/schema#", 
+	"$id": "https://example.com/object1711897169.json", 
+	"title": "Root", 
+	"type": "object",
+	"required": [
+		"programDescription",
+		"programName",
+		"programStatus"
+	],
+	"properties": {
+		"programDescription": {
+			"$id": "#root/programDescription", 
+			"title": "Programdescription", 
+			"type": "string",
+			"default": "",
+			"examples": [
+				"Test Program"
+			],
+			"pattern": "^.*$"
+		},
+		"programName": {
+			"$id": "#root/programName", 
+			"title": "Programname", 
+			"type": "string",
+			"default": "",
+			"examples": [
+				"Test10"
+			],
+			"pattern": "^.*$"
+		},
+		"programStatus": {
+			"$id": "#root/programStatus", 
+			"title": "Programstatus", 
+			"type": "string",
+			"default": "",
+			"examples": [
+				"active"
+			],
+			"pattern": "^.*$"
+		}
+	}
+}

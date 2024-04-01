@@ -30,7 +30,8 @@ public class UserLoginController {
 	Properties prop;
 	Response loginresponse;
 	String reqBody;
-	String token;
+ public static String token;
+	
 	
 	//ConfigReader for reading UserID and password from config file	
 		public  UserLoginController() throws IOException {
@@ -60,8 +61,8 @@ public class UserLoginController {
 	public void admin_calls_post_https_method_with_valid_endpoint() {
 		loginresponse.then().log().all().extract().response();
 		 token = loginresponse.jsonPath().getString("token");
-	      Object gettoken = LMSTestRunner.scenarioContext.setContext("Token", token); 
-	        System.out.println(gettoken);
+	      //Object gettoken = LMSTestRunner.scenarioContext.setContext("Token", token); 
+	        //System.out.println(gettoken);
 	        loginresponse.then().log().all().extract().response();
 	        //LoggerLoad.info("the response of the rquest is " + loginresponse);
 	}
