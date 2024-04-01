@@ -1,0 +1,1 @@
+{"uuid":"f00bc781-8c01-4836-8a00-00349435c8fa","name":"Scenario: Check if admin is able to assign Admin to with program/batch by Admin Id with invalid endpoint","children":["ca056e09-4747-4c46-a56a-3f93f332e10b"],"befores":[],"afters":[],"start":1711946353769,"stop":1711946357712}

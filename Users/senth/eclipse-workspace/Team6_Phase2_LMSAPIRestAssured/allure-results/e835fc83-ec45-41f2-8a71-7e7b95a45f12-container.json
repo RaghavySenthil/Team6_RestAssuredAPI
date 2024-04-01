@@ -1,0 +1,1 @@
+{"uuid":"e835fc83-ec45-41f2-8a71-7e7b95a45f12","name":"Scenario: Check if admin is able to assign Admin to with program/batch by Admin Id with no AUTH","children":["be8f7826-78c3-4e22-91cc-4b390186b72e"],"befores":[],"afters":[],"start":1711949528749,"stop":1711949531673}
