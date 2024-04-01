@@ -1,0 +1,1 @@
+{"uuid":"b50dc815-25fd-40d5-b985-2affc361a5d6","name":"Scenario: Check if admin is able to update the Admin login status by Admin ID with no Auth","children":["23c1e411-8ad4-4ef9-8e1e-707b85a26b9d"],"befores":[],"afters":[],"start":1711997883469,"stop":1711997886751}

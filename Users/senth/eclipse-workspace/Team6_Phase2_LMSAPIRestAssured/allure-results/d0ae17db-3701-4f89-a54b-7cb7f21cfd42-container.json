@@ -1,0 +1,1 @@
+{"uuid":"d0ae17db-3701-4f89-a54b-7cb7f21cfd42","name":"Scenario: Check if admin is able to retreive all the available roles with invalid End point","children":["0cd50234-318b-4d16-902c-080b29532bac"],"befores":[],"afters":[],"start":1712013707657,"stop":1712013708310}

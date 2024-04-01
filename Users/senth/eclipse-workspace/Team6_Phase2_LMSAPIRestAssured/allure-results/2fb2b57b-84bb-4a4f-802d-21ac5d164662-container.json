@@ -1,0 +1,1 @@
+{"uuid":"2fb2b57b-84bb-4a4f-802d-21ac5d164662","name":"Scenario: Create a new Admin with valid endpoint and request body with mandatory and additional fields","children":["415d5dbb-bb9e-4c7f-8873-4526914d1c4e"],"befores":[],"afters":[],"start":1712013701922,"stop":1712013703299}

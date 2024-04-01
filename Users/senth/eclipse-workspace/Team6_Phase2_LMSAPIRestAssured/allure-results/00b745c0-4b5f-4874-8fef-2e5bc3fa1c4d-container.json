@@ -1,0 +1,1 @@
+{"uuid":"00b745c0-4b5f-4874-8fef-2e5bc3fa1c4d","name":"Scenario: Check if admin is able to update role status of a Admin with valid Admin id with no authorization","children":["61a45fcf-ebad-4840-8349-ea6f54b48821"],"befores":[],"afters":[],"start":1712014032886,"stop":1712014035545}

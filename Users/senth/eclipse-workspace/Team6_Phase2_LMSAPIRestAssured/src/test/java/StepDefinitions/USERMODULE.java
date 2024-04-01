@@ -1,5 +1,6 @@
 package StepDefinitions;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.List;
 import java.util.Map;
@@ -69,6 +70,7 @@ public class USERMODULE {
 			for (Map<String, String> row : getUserData) {
 				String endpoint = Endpoint.PUT_USER_ROLEID;
 				String userID = row.get("userID");
+				if(userID != null) {
 				System.out.println("endpoint is ;" + endpoint);
 				endpoint = endpoint.replace("{userID}", userID);
 				System.out.println("updated endpoint of post user with userid : " + endpoint);
@@ -77,6 +79,7 @@ public class USERMODULE {
 				response = RestAssured.given().header("Authorization", "Bearer " + retrievedToken)
 						.spec(LMSReqspec.Update_UserRoleID()).body(reqBody).when().put(endpoint);
 				response.then().log().all();
+				}
 			}
 		} catch (IOException | InvalidFormatException e) {
 			e.printStackTrace(); // Print the exception stack trace for debugging
@@ -138,6 +141,7 @@ public class USERMODULE {
 			for (Map<String, String> row : getUserData) {
 				String userID = row.get("userID");
 				String endpoint = Endpoint.PUT_USER_ROLEID;
+				if(userID != null) {
 				endpoint = endpoint.replace("{userID}", userID);
 				reqBody = Json_PayLoad_PUT_UModule.createPayload_RoleID(row);
 				System.out.println("request body of post user with userid : " + reqBody);
@@ -146,7 +150,7 @@ public class USERMODULE {
 				Object retrievedToken = LMSTestRunner.scenarioContext.getContext("Token");
 				System.out.println("retreived token ");
 				response = RestAssured.given().spec(LMSReqspec.Update_UserRoleID()).body(reqBody).when().put(endpoint);
-				response.then().log().all();
+				response.then().log().all();}
 			}
 		} catch (IOException | InvalidFormatException e) {
 			e.printStackTrace(); // Print the exception stack trace for debugging
@@ -179,6 +183,7 @@ public class USERMODULE {
 
 			for (Map<String, String> row : getUserData) {
 				String userID = row.get("userID");
+				if (userID != null) {
 				endpoint = endpoint.replace("{userID}", userID);
 				reqBody = Json_PayLoad_PUT_UModule.createPayload_RoleID(row);
 				System.out.println("request body of post user with userid : " + reqBody);
@@ -188,7 +193,7 @@ public class USERMODULE {
 				System.out.println("retreived token ");
 				response = RestAssured.given().header("Authorization", "Bearer " + retrievedToken)
 						.spec(LMSReqspec.Update_UserRoleID()).body(reqBody).when().put(endpoint);
-				response.then().log().all();
+				response.then().log().all();}
 			}
 		} catch (IOException | InvalidFormatException e) {
 			e.printStackTrace(); // Print the exception stack trace for debugging
@@ -218,6 +223,7 @@ public class USERMODULE {
 			 String endpoint=Endpoint.PUT_LOGIN_STATUS;
 				String userID = row.get("userID");
           System.out.println("endpoint is ;"+endpoint);
+          if(userID !=null) {
 		 endpoint = endpoint.replace("{userId}",userID);
 		 System.out.println("updated endpoint of post user with userid : "+endpoint);	
 		 reqBody = Json_PayLoad_PUT_UModule.createPayload_userloginstatus(row);
@@ -227,7 +233,7 @@ public class USERMODULE {
 	        		.spec(LMSReqspec.Update_UserLoginStatus()).body(reqBody)
 	        		.when().
 	        		put(endpoint);
-		    response.then().log().all();
+		    response.then().log().all();}
 	}
 		 }
 		 catch (IOException | InvalidFormatException e) {
@@ -246,6 +252,7 @@ public class USERMODULE {
 		 for (Map<String, String> row : getUserData){
 			 String endpoint=Endpoint.PUT_LOGIN_STATUS;
 				String userID = row.get("userID");
+				if(userID != null) {
          System.out.println("endpoint is ;"+endpoint);
 		 endpoint = endpoint.replace("{userId}",userID);
 		 System.out.println("updated endpoint of post user with userid : "+endpoint);	
@@ -256,7 +263,7 @@ public class USERMODULE {
 	        		.spec(LMSReqspec.Update_UserLoginStatus()).body(reqBody)
 	        		.when().
 	        		put(endpoint);
-		    response.then().log().all();
+		    response.then().log().all();}
 	}
 		 }
 		 catch (IOException | InvalidFormatException e) {
@@ -275,6 +282,7 @@ public class USERMODULE {
 		 for (Map<String, String> row : getUserData){
 			 String endpoint=Endpoint.PUT_LOGIN_STATUS_INVALID_ENDPOINT;
 				String userID = row.get("userID");
+				if(userID != null) {
          System.out.println("endpoint is ;"+endpoint);
 		 endpoint = endpoint.replace("{userId}",userID);
 		 System.out.println("updated endpoint of post user with userid : "+endpoint);	
@@ -285,7 +293,7 @@ public class USERMODULE {
 	        		.spec(LMSReqspec.Update_UserLoginStatus()).body(reqBody)
 	        		.when().
 	        		put(endpoint);
-		    response.then().log().all();
+		    response.then().log().all();}
 	}
 		 }
 		 catch (IOException | InvalidFormatException e) {
@@ -302,6 +310,7 @@ public class USERMODULE {
 			for (Map<String, String> row : getUserData) {
 				String userID = row.get("userID");
 				String endpoint = Endpoint.PUT_USER_ROLE_STATUS;
+				if(userID != null) {
 				endpoint = endpoint.replace("{userID}", userID);
 				reqBody = Json_PayLoad_PUT_UModule.createPayload_RoleStatus(row);
 				System.out.println("request body of post user with userid : " + reqBody);
@@ -309,8 +318,9 @@ public class USERMODULE {
 
 				Object retrievedToken = LMSTestRunner.scenarioContext.getContext("Token");
 				System.out.println("retreived token ");
-				response = RestAssured.given().spec(LMSReqspec.update_UserRoleStatus()).body(reqBody).when().put(endpoint);
-				response.then().log().all();
+				response = RestAssured.given().header("Authorization", "Bearer " + retrievedToken)
+						.spec(LMSReqspec.update_UserRoleStatus()).body(reqBody).when().put(endpoint);
+				response.then().log().all();}
 			}
 		} catch (IOException | InvalidFormatException e) {
 			e.printStackTrace(); // Print the exception stack trace for debugging
@@ -326,6 +336,7 @@ public class USERMODULE {
 
 				for (Map<String, String> row : getUserData) {
 					String userID = row.get("userID");
+					if(userID != null) {
 					endpoint = endpoint.replace("{userID}", userID);
 					reqBody = Json_PayLoad_PUT_UModule.createPayload_RoleStatus(row);
 					System.out.println("request body of post user with userid : " + reqBody);
@@ -334,7 +345,7 @@ public class USERMODULE {
 					Object retrievedToken = LMSTestRunner.scenarioContext.getContext("Token");
 					System.out.println("retreived token ");
 					response = RestAssured.given().spec(LMSReqspec.update_UserRoleStatus()).body(reqBody).when().put(endpoint);
-					response.then().log().all();
+					response.then().log().all();}
 				}
 			} catch (IOException | InvalidFormatException e) {
 				e.printStackTrace(); 
@@ -354,6 +365,7 @@ public class USERMODULE {
 		 for (Map<String, String> row : getUserData){
 			 String endpoint=Endpoint.PUT_USER_ROLE_STATUS_INVALID_ENDPOINT;
 				String userID = row.get("userID");
+				if(userID !=null) {
           System.out.println("endpoint is ;"+endpoint);
 		 endpoint = endpoint.replace("{userID}",userID);
 		 System.out.println("updated endpoint of post user with userid : "+endpoint);	
@@ -364,7 +376,7 @@ public class USERMODULE {
 	        		.spec(LMSReqspec.update_UserRoleStatus()).body(reqBody)
 	        		.when().
 	        		put(endpoint);
-		    response.then().log().all();
+		    response.then().log().all();}
 	}
 		 }
 		 catch (IOException | InvalidFormatException e) {
@@ -435,6 +447,7 @@ public class USERMODULE {
 			for (Map<String, String> row : getUserData) {
 				String endpoint = Endpoint.PUT_URPBS;
 				String userID = row.get("userID");
+				if(userID != null) {
 				System.out.println("endpoint is ;" + endpoint);
 				endpoint = endpoint.replace("{userId}", userID);
 				System.out.println("updated endpoint of post user with userid : " + endpoint);
@@ -442,7 +455,7 @@ public class USERMODULE {
 
 				response = RestAssured.given().header("Authorization", "Bearer " + retrievedToken)
 						.spec(LMSReqspec.update_URPBS()).body(reqBody).when().put(endpoint);
-				response.then().log().all();
+				response.then().log().all();}
 			}
 		} catch (IOException | InvalidFormatException e) {
 			e.printStackTrace(); // Print the exception stack trace for debugging
@@ -459,6 +472,7 @@ public class USERMODULE {
 			for (Map<String, String> row : getUserData) {
 				String endpoint = Endpoint.PUT_URPBS;
 				String userID = row.get("userID");
+				if(userID != null) {
 				System.out.println("endpoint is ;" + endpoint);
 				endpoint = endpoint.replace("{userId}", userID);
 				System.out.println("updated endpoint of post user with userid : " + endpoint);
@@ -466,7 +480,7 @@ public class USERMODULE {
 
 				response = RestAssured.given()
 						.spec(LMSReqspec.update_URPBS()).body(reqBody).when().put(endpoint);
-				response.then().log().all();
+				response.then().log().all();}
 			}
 		} catch (IOException | InvalidFormatException e) {
 			e.printStackTrace(); // Print the exception stack trace for debugging
@@ -484,14 +498,15 @@ public class USERMODULE {
 				for (Map<String, String> row : getUserData) {
 					String endpoint = Endpoint.PUT_URPBS_INVALID_ENDPOINT;
 					String userID = row.get("userID");
+					if(userID != null) {
 					System.out.println("endpoint is ;" + endpoint);
 					endpoint = endpoint.replace("{userId}", userID);
 					System.out.println("updated endpoint of post user with userid : " + endpoint);
 					reqBody = Json_PayLoad_PUT_UModule.createPayload_URPBS(row);
 
-					response = RestAssured.given()
+					response = RestAssured.given().header("Authorization", "Bearer " + retrievedToken)
 							.spec(LMSReqspec.update_URPBS()).body(reqBody).when().put(endpoint);
-					response.then().log().all();
+					response.then().log().all();}
 				}
 			} catch (IOException | InvalidFormatException e) {
 				e.printStackTrace(); // Print the exception stack trace for debugging
@@ -605,7 +620,7 @@ public class USERMODULE {
 			Object set_userid = LMSTestRunner.scenarioContext.setContext("userid", ValidDataResponse.jsonPath().getString("userId"));
 			
 			ValidDataResponse.then().log().all();
-		//	ValidDataResponse.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(new File("./src/test/resources/Test_Data/UsermoduleSchema.json")));
+			ValidDataResponse.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(new File("./src/test/resources/Test_Data/UsermoduleSchema.json")));
 			assertEquals(userComments,ValidDataResponse.jsonPath().getString("userComments") ); 
 			assertEquals(userEduPg,ValidDataResponse.jsonPath().getString("userEduPg") );
 			assertEquals(userEduUg,ValidDataResponse.jsonPath().getString("userEduUg") );

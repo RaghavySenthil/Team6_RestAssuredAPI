@@ -42,8 +42,10 @@ public class UserLoginController {
 	
 	@Given("Admin creates request with valid credentials")
 	public void admin_creates_request_with_valid_credentials() throws Exception, IOException {
-		String Email = prop.getProperty("UserLoginEmail");
-		String Password = prop.getProperty("Password");
+		//String Email = prop.getProperty("UserLoginEmail");
+		//String Password = prop.getProperty("Password");
+		String Email = "numpyninja@gmail.com";
+		String Password = "lmsHackathon@2024";
 		reqBody = "{\n"
 		+ " \"password\": \""+ Password +"\",\n"
 		+ " \"userLoginEmailId\": \""+Email+"\"\n"

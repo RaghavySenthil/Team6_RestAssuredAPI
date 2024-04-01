@@ -1,0 +1,1 @@
+{"uuid":"2f6a8ffb-b41f-41af-adc2-aec4c4275699","name":"Scenario: Check if admin able to retrieve a Admin with valid Admin ID and invalid endpoint","children":["136413c7-ce68-46a3-8497-703d3541d9b6"],"befores":[],"afters":[],"start":1712012612368,"stop":1712012612712}
