@@ -2,6 +2,7 @@ package TestRequest;
 
 import org.json.simple.JSONObject;
 
+import StepDefinition.UserLoginController;
 import TestRunner.LMSTestRunner;
 import io.restassured.RestAssured;
 import io.restassured.builder.RequestSpecBuilder;
@@ -14,10 +15,10 @@ public class ReqResSpecification {
 	public RequestSpecification reqSpec;
 	public ResponseSpecification responseSpecification;
 
-	String token; 
-	Object retrievedToken =LMSTestRunner.scenarioContext.getContext("Token", token);
-	String RetrievedToken="eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJudW1weW5pbmphQGdtYWlsLmNvbSIsImlhdCI6MTcxMTk3OTk1NSwiZXhwIjoxNzEyMDA4NzU1fQ.piNH5Max6v3ZHZa04EOzu1FisbdD3jezT58jkPWMUqNAxff0MyULTEfTFuZmLYaTYtRXjG-cAfaVBYEUVQ7j3g";
-	
+	//String token; 
+	//Object retrievedToken =LMSTestRunner.scenarioContext.getContext("Token", token);
+	//String RetrievedToken="eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJudW1weW5pbmphQGdtYWlsLmNvbSIsImlhdCI6MTcxMTk3OTk1NSwiZXhwIjoxNzEyMDA4NzU1fQ.piNH5Max6v3ZHZa04EOzu1FisbdD3jezT58jkPWMUqNAxff0MyULTEfTFuZmLYaTYtRXjG-cAfaVBYEUVQ7j3g";
+	String RetrievedToken=UserLoginController.token;
 	String validURI="https://lms-marchapi-hackathon-a258d2bbd43b.herokuapp.com/lms";
 	String invalidURI="https://lms-marchapi-hackathon-a258d2bbd43b.herokuapp.com/ls";
 	
