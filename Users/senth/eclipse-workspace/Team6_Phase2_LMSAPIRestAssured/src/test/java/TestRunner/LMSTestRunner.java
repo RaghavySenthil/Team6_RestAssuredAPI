@@ -2,6 +2,7 @@ package TestRunner;
 
 import org.junit.runner.RunWith;
 
+import Utilities.ScenarioContext;
 //import Utilities.ScenarioContext;
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
@@ -12,18 +13,18 @@ import io.cucumber.junit.CucumberOptions;
 				"rerun:target/failedrerun.txt", "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm",
 				 "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"},
 				monochrome = true,
-						tags = "@tag3-post",
+						tags = "@tag1 or @tag2 or @tag3",
 				/*tags = "@tag1-getalluser or @tag2-getinvalidendpoint or @tag3-post or @tag4-getbyuserid or
 						@tag5-getbyusername or @tag7-deletebyuserid"*/
 				//tags="@tag3-post or @tag5-getbyusername",
 				features= {"src/test/resources/Feature"},
-				glue = {"StepDefinitions"}
+				glue = {"StepDefinition"}
 			
 		)
 
 
 
-public class UserTestRunner {
-	//public static ScenarioContext scenarioContext = new ScenarioContext();
+public class LMSTestRunner {
+	public static ScenarioContext scenarioContext = new ScenarioContext();
 }
 

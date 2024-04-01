@@ -18,12 +18,11 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.restassured.RestAssured;
-import io.restassured.RestAssured.*;
 import io.restassured.matcher.ResponseAwareMatcher;
 import io.restassured.module.jsv.JsonSchemaValidator;
 import io.restassured.response.Response;
 
-public class User_Module{
+public class User_Module {
 	Response ValidDataResponse;
 	String token;
 	Object retrievedToken =LMSTestRunner.scenarioContext.getContext("Token", token);
@@ -131,10 +130,8 @@ public class User_Module{
 			}
 
 	@When("Admin sends HTTPS Request with endpoint")
-	public void admin_sends_https_request_with_endpoint(String endpoint) {
-        //Response response = get(endpoint);
-
-		//ValidDataResponse.then().log().all();
+	public void admin_sends_https_request_with_endpoint() {
+		ValidDataResponse.then().log().all();
 	}
 
 	@Then("Admin receives {int} Created Status with response body.")
@@ -151,7 +148,7 @@ public class User_Module{
 	}
 
 	@Then("Admin receives {int} Bad Request Status with message and boolean success details.")
-	public void admin_receives_bad_request_status_with_message_and_boolean_success_details1(Integer int1) {
+	public void admin_receives_bad_request_status_with_message_and_boolean_success_details(Integer int1) {
 	    // Write code here that turns the phrase above into concrete actions
 	    throw new io.cucumber.java.PendingException();
 	}
@@ -173,102 +170,5 @@ public class User_Module{
 	    // Write code here that turns the phrase above into concrete actions
 	    throw new io.cucumber.java.PendingException();
 	}
-	
-	
-//scenario 7-12
-@Given("Admin creates GET Request")
-public void admin_creates_get_request() {
-	ValidDataResponse = RestAssured
-			.given().header("Authorization","Bearer "+retrievedToken)
-    		.spec(LMSReqspec.AllActiveusers())
-    		.when()
-	    	     .get();
-	ValidDataResponse.then()
-	               .statusCode(200)
-	               .log().all();
-	System.out.println("This is GET ALLactive users");
-}
-
-@Then("Admin receives {int} OK")
-public void admin_receives_ok(Integer int1) {
-	ValidDataResponse.then().log().all();
-
-}
-
-@Given("Admin creates GET Request with valid batch Id")
-public void admin_creates_get_request_with_valid_batch_id() {
-	ValidDataResponse = RestAssured
-			.given().header("Authorization","Bearer"+retrievedToken)
-			.pathParam("id", 8596)
-    		.spec(LMSReqspec.Getuserbyprogrambatches())
-    		.body(retrievedToken)
-    		.when()
-	    	.post();
-	ValidDataResponse.then().log().all();
-}
-
-@Given("Admin creates GET Request  with invalid batchId")
-public void admin_creates_get_request_with_invalid_batch_id() {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-
-@Then("Admin receives {int}")
-public void admin_receives(Integer int1) {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-
-@Given("Admin creates GET Request with valid role ID")
-public void admin_creates_get_request_with_valid_role_id() {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-
-@Given("Admin creates GET Request for GET with invalid role ID")
-public void admin_creates_get_request_for_get_with_invalid_role_id() {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-
-@Given("Admin creates PUT Request with valid request body")
-public void admin_creates_put_request_with_valid_request_body() {
-	ValidDataResponse = RestAssured
-			.given().header("Authorization","Bearer"+retrievedToken)
-    		.spec(LMSReqspec.Updateuserbyuserid())
-    		.body(retrievedToken)
-    		.when()
-	    	.post();
-	ValidDataResponse.then().log().all();
-}
-
-@Then("Admin receives {int} OK  Status with response body.")
-public void admin_receives_ok_status_with_response_body(Integer int1) {
-}
-
-@Given("Admin creates PUT Request with request body")
-public void admin_creates_put_request_with_request_body() {
-	ValidDataResponse = RestAssured
-			.given().header("Authorization","Bearer"
-					+ ""
-					+ ""
-					+ " "
-					+ ""
-					+ ""+retrievedToken)
-    		.spec(LMSReqspec.Updateuserbyuserid())
-    		.body(retrievedToken)
-    		.when()
-	    	.post();
-	ValidDataResponse.then().log().all();
-}
-
-@Then("Admin receives {int} Bad Request Status with message and boolean success details")
-public void admin_receives_bad_request_status_with_message_and_boolean_success_details(Integer int1) {
-	int actualStatusCode = ValidDataResponse.getStatusCode();
-	String responseBody = ValidDataResponse.getBody().asString();
-    System.out.println("Response Body: " + responseBody);
-}
-
-
 
 }
