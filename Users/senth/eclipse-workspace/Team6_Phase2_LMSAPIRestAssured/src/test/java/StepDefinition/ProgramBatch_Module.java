@@ -34,6 +34,9 @@ public class ProgramBatch_Module {
 	Response GetAllbatchresponse;
 	Response DeletebyID;
 	String retrievedToken;
+	String BatchID;
+	int programId= Program_Module.createdprogramID;
+	String programName=Program_Module.createdprogramName;
 	//Object retrievedToken =LMSTestRunner.scenarioContext.getContext("Token", token);
 	List<Map<String, String>> getUserData;
 	String message;
@@ -108,6 +111,9 @@ public class ProgramBatch_Module {
 		@When("Admin sends HTTPS Request with endpoint for batchmodule")
 		public void admin_sends_https_request_with_endpoint_for_batchmodule() {
 			//BatchmoduleValidDataResponse.then().log().all();
+		BatchID=BatchmoduleValidDataResponse.jsonPath().getString("batchId");
+		System.out.println(BatchID);
+		
 		}
 
 		@Then("Admin receives {int} Created Status with response body for batchmodule.")
@@ -276,8 +282,8 @@ public class ProgramBatch_Module {
 		BatchmoduleValidDataResponse.then().log().all();
 	}
 
-	@Given("Admin creates POST Request")
-	public void admin_creates_post_request() {
+	@Given("Admin creates POST Request invalidendpoint")
+	public void admin_creates_post_request_invalidendpoint() {
 		try {
 			// List<Map<String, String>> getUserData=(UserExcelReader.getData(Endpoint.BatchmoduleExcelpath, "LMS_valid_data_Batchmodule"));
 			List<Map<String, String>> getUserData= (UserExcelReader.getData(Endpoint.Excelpath, "Batchmodule_validData"));
@@ -339,8 +345,8 @@ public class ProgramBatch_Module {
 		    }
 	}
 
-	@When("Admin sends HTTPS Request with invalid endpoint")
-	public void admin_sends_https_request_with_invalid_endpoint() {
+	@When("Admin sends HTTPS Request with invalid endpoint pgmbatch")
+	public void admin_sends_https_request_with_invalid_endpoint_pgmbatch() {
 		Batchmoduleinvalidendpoint.then().log().all();
 	}
 
@@ -422,7 +428,7 @@ public void admin_sends_https_request_with_endpoint_with_invalidpgm_id() {
 public void admin_receives_bad_request_status_with_message_and_boolean_success_details_with_invalidpgm_id(Integer int1) {
 	BatchmoduleValidDataResponse.then().log().all();
 }
-@Given("Admin creates GET Request")
+@Given("Admin creates GET Request in ProgramBatch")
 public void admin_creates_get_request() {
 	//GetAllbatchresponse= RestAssured.given().header("Authorization","Bearer "+retrievedToken);
 	GetAllbatchresponse = RestAssured.given()
@@ -440,13 +446,13 @@ public void admin_sends_https_request_with_endpoint_in_get_all_request() {
 }
 
 
-@Then("Admin receives {int} OK Status with response body.")
+@Then("Admin receives {int} OK Status with response body program batchmodule.")
 public void admin_receives_ok_status_with_response_body(Integer int1) {
 	GetAllbatchresponse.then().statusCode(200);
 }
 
-@Given("Admin creates GET Request for invalid endpoint")
-public void admin_creates_get_request_for_invalid_endpoint() {
+@Given("Admin creates GET Request for invalid endpoint programbatch")
+public void creates_get_request_for_invalid_endpoint() {
 	GetAllbatchresponse = RestAssured.given()
     		.header("Authorization","Bearer "+UserLoginController.token)
 	    	.spec(LMSReqspec.getInvalidendpoint_Batches())
@@ -488,23 +494,23 @@ public void admin_receives_ok_status_with_response_body_in_batch_id(Integer int1
 
 @Given("Admin creates DELETE Request with valid BatchId")
 public void admin_creates_delete_request_with_valid_batch_id() throws InvalidFormatException, IOException {
-	List<Map<String, String>> getUserData= (UserExcelReader.getData(Endpoint.Excelpath, "DeletebyID"));
+	/*List<Map<String, String>> getUserData= (UserExcelReader.getData(Endpoint.Excelpath, "DeletebyID"));
 	// Iterate over each row of data
 	
 	 for (Map<String, String> row : getUserData){
-		String batchId = row.get("batchId");
-	 
+		int batchId = Integer.parseInt(row.get("batchId")); 
 	// Construct JSON body for the request
 		String userInfoJson2 = "{" +
 				"\"batchId\": \"" + batchId+"\"" +
 	 "}";
-		System.out.println(userInfoJson2);
+		System.out.println(userInfoJson2);*/
+		
 		DeletebyID = RestAssured
 				.given().header("Authorization","Bearer "+UserLoginController.token)
-	    		.spec(LMSReqspec.Delete_BatchbyBatchId()).pathParam("batchId", batchId)
+	    		.spec(LMSReqspec.Delete_BatchbyBatchId()).pathParam("batchId", BatchID)
 	    		.when()
 		    	.delete();
-	 } }
+	 } 
 
 
 @When("Admin sends HTTPS Request with endpoint for Delete by ID")
@@ -514,7 +520,8 @@ public void admin_sends_https_request_with_endpoint_for_delete_by_id() {
 
 @Then("Admin receives {int} Ok status with message for Delete by ID")
 public void admin_receives_ok_status_with_message_for_delete_by_id(Integer int1) {
-	DeletebyID.then().statusCode(200);
+	//DeletebyID.then().statusCode(200);
+	assertEquals(DeletebyID.statusCode(), 200);
 }
 
 @Given("Admin creates DELETE Request with valid BatchId invalidendpoint")
@@ -643,7 +650,7 @@ public void admin_sends_https_request_with_endpointof_get_by_invalid_batch_name(
 	GetAllbatchresponse.then().log().all().extract().response();
 }
 
-@Then("Admin receives {int} Not Found Status with message and boolean success details")
+@Then("Admin receives {int} Not Found Status with message and boolean success details_InvalidBatchname")
 public void admin_receives_not_found_status_with_message_and_boolean_success_details(Integer int1) {
 	GetAllbatchresponse.then().statusCode(404);
 }
@@ -678,7 +685,8 @@ public void admin_sends_https_request_with_endpointof_get_by_valid_program_id() 
 
 @Then("Admin receives {int} OK Status with response body Program ID.")
 public void admin_receives_ok_status_with_response_body_program_id(Integer int1) {
-	GetAllbatchresponse.then().statusCode(200);
+	//GetAllbatchresponse.then().statusCode(200);
+	assertEquals(GetAllbatchresponse.statusCode(), 200);
 }
 @Given("Admin creates GET Request with invalid Program Id")
 public void admin_creates_get_request_with_invalid_program_id() throws Exception, IOException {

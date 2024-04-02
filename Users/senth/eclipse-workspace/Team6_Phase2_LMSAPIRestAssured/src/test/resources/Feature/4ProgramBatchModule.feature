@@ -16,7 +16,7 @@
 #""
 ## (Comments)
 #Sample Feature Definition Template
-@tag
+@ProgramBatchModule
 Feature: Post-Request-Batch_module
   Background: Admin sets Authorization to Bearer Token.
 
@@ -40,8 +40,8 @@ Feature: Post-Request-Batch_module
     
     @Batchmoduleinvalidendpoint
   Scenario: Check if admin able to create a batch with invalid endpoint
-   Given Admin creates POST Request  
-    When Admin sends HTTPS Request with invalid endpoint  
+   Given Admin creates POST Request invalidendpoint
+    When Admin sends HTTPS Request with invalid endpoint pgmbatch 
     Then Admin receives 404 not found  Status
     
         
@@ -53,13 +53,13 @@ Feature: Post-Request-Batch_module
     
     @GetRequest
   Scenario: Check if admin able to retrieve all batches  with valid LMS API
-   Given Admin creates GET Request  
+   Given Admin creates GET Request in ProgramBatch  
     When Admin sends HTTPS Request with endpoint in get all request  
-    Then Admin receives 200 OK Status with response body.
+    Then Admin receives 200 OK Status with response body program batchmodule.
 
 @GetRequest-invalidendpoint
-  Scenario: Check if admin able to retrieve all batches with invalid Endpoint
-   Given Admin creates GET Request for invalid endpoint 
+  Scenario: Check if admin able to retrieve all batches with invalid Endpoint 
+   Given Admin creates GET Request for invalid endpoint programbatch
     When Admin sends HTTPS Request with invalidendpoint in get all request  
     Then Admin receives 404 status with error message Not Found.
     
@@ -67,7 +67,7 @@ Feature: Post-Request-Batch_module
 Scenario: Check if admin able to retrieve a batch with valid BATCH ID
 Given Admin creates GET Request with valid Batch ID
 When Admin sends HTTPS Request with endpointof get by ID
-Then Admin receives 200 OK Status with response body.
+Then Admin receives 200 OK Status with response body in batch ID.
 
 @GETREQUESTbyRetriveBatch_ID 
 Scenario: Check if admin able to retrive a batch after deleting the batch
@@ -85,7 +85,7 @@ Then Admin receives 200 OK Status with response body in batch Name.
 Scenario: Check if admin able to retrieve a batch with invalid BATCH NAME
 Given Admin creates GET Request with invalid Batch Name
 When Admin sends HTTPS Request with endpointof get by invalid Batch name
-Then Admin receives 404 Not Found Status with message and boolean success details
+Then Admin receives 404 Not Found Status with message and boolean success details_InvalidBatchname
 
 @GETREQUESTbyprogramId
 Scenario: Check if admin able to retrieve a batch with valid Program ID
@@ -111,7 +111,7 @@ When Admin sends HTTPS Request with endpoint for Delete by ID
 Then Admin receives 200 Ok status with message for Delete by ID
 @DELETEREQUESTbyBatchID-invalidendpoint
 Scenario: Check if admin able to delete a Batch with invalid endpoint
-Given Admin creates DELETE Request with valid BatchId invalidendpoint
+Given Admin creates DELETE Request with valid BatchId invalidendpoint 
 When Admin sends HTTPS Request with invalid endpoint for Delete by ID 
 Then Admin receives 404 not found for Delete by ID
 @DELETEREQUESTbyBatchID-invalidBatchid

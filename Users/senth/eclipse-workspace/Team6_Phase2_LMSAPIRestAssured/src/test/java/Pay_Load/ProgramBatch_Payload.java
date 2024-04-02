@@ -10,9 +10,12 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import EndPoints.Endpoint;
 import Pojo_Class.ProgramBatch_Pojo;
+import StepDefinition.Program_Module;
 import Utilities.UserExcelReader;
 
 public class ProgramBatch_Payload {
+	int programId= Program_Module.createdprogramID;
+	String programName=Program_Module.createdprogramName;
 	public static String Data() throws Exception {
 	ProgramBatch_Pojo Data = new ProgramBatch_Pojo(); 
 	

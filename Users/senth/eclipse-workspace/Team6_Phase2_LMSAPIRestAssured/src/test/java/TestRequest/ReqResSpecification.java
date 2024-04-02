@@ -14,6 +14,7 @@ public class ReqResSpecification {
 	RequestSpecBuilder reqSpeBuilder;
 	public RequestSpecification reqSpec;
 	public ResponseSpecification responseSpecification;
+	//String retrievedToken=UserLoginController.token;
 
 	//String token; 
 	//Object retrievedToken =LMSTestRunner.scenarioContext.getContext("Token", token);

@@ -2,34 +2,41 @@ package Utilities;
 
 import java.util.HashMap;
 import java.util.Map;
-
+import javax.naming.Context;
 import com.aventstack.extentreports.gherkin.model.Scenario;
 
 public class ScenarioContext {
-	
-	private Map<String, Object> scenarioData;
-	private Scenario scenario;
 
-	    public ScenarioContext() {
-	        scenarioData = new HashMap<String, Object>();
-	    }
+	private Map<String, Object> scenarioContext;
 
-	    public Object setContext(String key, Object value) {
-	        scenarioData.put(key, value);
-			return value;
-	    }
+    public ScenarioContext(){
+        scenarioContext = new HashMap<String, Object>();
+    }
 
-	    public Object getContext(String key, String token) {
-	         return scenarioData.get(key);
-	    }
+    public void setContext(Context key, Object value) {
+        scenarioContext.put(key.toString(), value);
+    }
 
-	    public void setScenario(Scenario scenario) {
-	        this.scenario = scenario;
-	    }
+    public Object getContext(String string){
+        return scenarioContext.get(string.toString());
+    }
 
-		public Object getContext(String string) {
-			// TODO Auto-generated method stub
-			return scenarioData.get(string);
-		}
+    public Boolean isContains(Context key){
+        return scenarioContext.containsKey(key.toString());
+    }
 
+	public Object setContext(String string, String token) {
+		return scenarioContext.put(string, token);
+	}
+
+	public Object getContext(String string, String token) {
+		// TODO Auto-generated method stub
+		//return null;
+		return scenarioContext.put(string, token);
+	}
+
+	public void setContext(String string, int programId) {
+		// TODO Auto-generated method stub
+		
+	}
 }

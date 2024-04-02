@@ -62,7 +62,20 @@ public class Endpoint extends ConfigReader{
 	public static String Get_AllProgram="/allPrograms";
 	public static String Put_Program = "/program/";
 	
+	//UserRoleProgramBatchMapController EndPoints
 	
+		public static final String Get_all_program_users ="/userRoleProgramBatchMap";
+		public static final String Get_all_program_user_by_ID = "/userRoleProgramBatchMap/{userId}";
+		public static final String Delete_all_programs_by_ID = "/userRoleProgramBatchMap/deleteAll/{userId}";
+		
+		//UserRoleProgramBatchMapController Invalid EndPoints
+		
+		public static final String Invalid_Get_all_program_users ="/userRoleProgramBatchMaps";
+		public static final String Invalid_Get_all_program_user_by_ID = "/userRoleProgramBatchMaps/{userId}";
+		public static final String Invalid_Delete_all_programs_by_ID = "/userRoleProgramBatchMaps/deleteAll/{userId}";
+	
+		public static String User_logout= "/logoutlms";
+		 public static String User_logout_invalid= "/logout";
 	//User Login--endpoint
 	//public static String Post_Login= "/login";
 		

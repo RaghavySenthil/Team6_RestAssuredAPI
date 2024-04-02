@@ -9,7 +9,7 @@ Feature: GetRequest
 	Scenario: Check if Admin able to create a program with valid endpoint and request body with Authorization
 	Given Admin creates POST Request for the LMS with request body
 	|programDescription|programName|programStatus|
-	|Test Program Module|TestProgram16|active|
+	|Test Program Module|TestProgram22|active|
 	
 	When Admin sends HTTPS Request and  request Body with endpoint
 	
@@ -19,7 +19,7 @@ Feature: GetRequest
   Scenario: Check if Admin able to retrieve all programs with valid Endpoint
     Given Admin creates GET Request for the LMS API
     When Admin sends Get Request with endpoint
-    Then Admin receives 200 OK Status with response body                                                    
+    Then Admin receives 200 OK Status with response body program module                                                  
 
 	@getProgram
   Scenario: Check if Admin able to retrieve given programs with valid Endpoint
@@ -32,7 +32,7 @@ Feature: GetRequest
 	Scenario: Check if Admin able to update a program with valid endpoint and request body with Authorization
 	Given Admin creates UPDATE Request for the LMS with request body
 	|programDescription|programName|programStatus|
-	|Test Program Module updated|TestProgram16|active|
+	|Test Program Module updated|TestProgram22|active|
 	
 	When Admin sends HTTPS Request and  request Body with valid endpoint
 	
