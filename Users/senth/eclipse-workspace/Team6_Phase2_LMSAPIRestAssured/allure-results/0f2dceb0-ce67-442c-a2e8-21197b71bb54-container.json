@@ -1,0 +1,1 @@
+{"uuid":"0f2dceb0-ce67-442c-a2e8-21197b71bb54","name":"Scenario: Check if admin is able to assign Admin to with program/batch by Admin Id with different request body","children":["dd3e4ded-73f6-4b80-897a-c563b0219eb1"],"befores":[],"afters":[],"start":1712014859499,"stop":1712014862311}

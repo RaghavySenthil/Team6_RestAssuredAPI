@@ -1,0 +1,1 @@
+{"uuid":"b77e24ec-2cdc-4884-8cc0-6cdbb4245c34","name":"Scenario: Check if admin able to retrieve a Admin with valid Admin ID with No authorization","children":["8b9beb9e-c1bb-4b39-9cf0-65d054852e91"],"befores":[],"afters":[],"start":1712014884591,"stop":1712014885107}

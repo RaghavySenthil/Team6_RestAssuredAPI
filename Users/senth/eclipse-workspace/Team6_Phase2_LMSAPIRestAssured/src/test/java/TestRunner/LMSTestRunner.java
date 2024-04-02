@@ -2,30 +2,29 @@ package TestRunner;
 
 import org.junit.runner.RunWith;
 
-import Utilities.scenarioContext;
+import Utilities.ScenarioContext;
+//import Utilities.ScenarioContext;
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 
-
 @RunWith(Cucumber.class)
 @CucumberOptions(
-		plugin= {"pretty", "html:target/cucumberreport.html", "html:target/ExtentReports/UserAPI.html",
+		plugin= {"pretty", "html:target/cucumberreport.html", "html:target/ExtentReports/LMSAPI.html",
 				"rerun:target/failedrerun.txt", "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm",
 				 "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"},
 				monochrome = true,
-						//tags = "@usermodule3",
-						//tags ="@userLOGINSTATUS_PUT1 or userLOGINSTATUS_PUT3 or  @userLOGINSTATUS_PUT2",
-				tags="@usermodule3 and not(@userLOGINSTATUS_DELETE13 and @userLOGINSTATUS_DELETE13)",
-				//tags=" @userLOGINSTATUS_PUT7",
-				features= {"src/test/resources/Feature/UserModule.feature"},
-				glue = {"StepDefinitions"}
+						tags = "@Login or @ProgramModule",//"@Login or @Batchmodule or @BatchExistingValue",
+				/*tags = "@tag1-getalluser or @tag2-getinvalidendpoint or @tag3-post or @tag4-getbyuserid or
+						@tag5-getbyusername or @tag7-deletebyuserid"*/
+				//tags="@tag3-post or @tag5-getbyusername",
+				features= {"src/test/resources/Feature"},
+				glue = {"StepDefinition"}
 			
 		)
 
+
+
 public class LMSTestRunner {
-	public static scenarioContext scenarioContext = new scenarioContext();
-
-	
-
+	public static ScenarioContext scenarioContext = new ScenarioContext();
 }
 

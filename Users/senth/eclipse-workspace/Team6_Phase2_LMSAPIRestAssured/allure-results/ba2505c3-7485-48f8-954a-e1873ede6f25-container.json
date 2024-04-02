@@ -1,0 +1,1 @@
+{"uuid":"ba2505c3-7485-48f8-954a-e1873ede6f25","name":"Scenario: Check if admin is able to retreive all the available roles without Authorization","children":["5cc72bcc-faf6-4133-b9e2-b29ec4ac7727"],"befores":[],"afters":[],"start":1712014878886,"stop":1712014879620}

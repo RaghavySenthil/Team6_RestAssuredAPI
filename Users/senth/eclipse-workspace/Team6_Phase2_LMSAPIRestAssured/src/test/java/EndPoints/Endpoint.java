@@ -27,4 +27,19 @@ public final class Endpoint {
 	public static String Get_AllUsers_withRoles_invalid = "/rolesinvalid";
 	public static String Get_Users_RoleStatus = "/users/byStatus/";
 	public static String Get_Users_RoleStatus_invalid = "/users/Status/";
+	
+	//Program Batch Module--Endpoints
+		public static String Post_CreateNewBatch = "/batches";
+		public static String GET_AllBatches = "/batches";
+		public static String Invalidendpoint_Batches = "/batches1";
+		public static String GET_BatchbyBatchId = "/batches/batchId/8573";
+		
+		 
+		public static String GET_BatchbyBatchName = "/batches/batchName/{batchName}";
+		public static String GET_BatchbyProgramId = "/batches/program/{programId}";
+		public static String PUT_UpdatebyBatch_Id = "/batches/{batchId}";
+		
+		public static String Delete_batchbyBatchId = "/batches/{batchId}";
+		public static String Delete_InvalidBatchbyBatchId ="/batches/{batchId}";
+		public static String Delete_InvalidBatchId = "/batches1/8421";
 }

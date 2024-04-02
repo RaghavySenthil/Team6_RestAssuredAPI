@@ -1,4 +1,4 @@
-package StepDefinitions;
+package StepDefinition;
 
 import java.io.File;
 import java.io.IOException;
@@ -17,12 +17,12 @@ import io.restassured.RestAssured;
 import io.restassured.module.jsv.JsonSchemaValidator;
 import io.restassured.path.json.exception.JsonPathException;
 import io.restassured.response.Response;
-import usermodule3.Authentication;
 import usermodule3_POJO.Json_PayLoad_PUT_UModule;
 
 import org.junit.Assert;
 
 import EndPoints.Endpoint;
+
 import TestRequest.LMSReqspec;
 import TestRunner.LMSTestRunner;
 import Utilities.UserExcelReader;
@@ -46,18 +46,6 @@ public class USERMODULE {
 	JSONArray requestarray = new JSONArray();
 	JSONArray userrolemaparray = new JSONArray();
 
-	@Given("Admin sets authorization to bearer token")
-	public void admin_sets_authorization_to_bearer_token() {
-
-		try {
-			Authentication authentication = new Authentication();
-			authentication.loginAPI();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-
-	}
 
 	@Given("Admin creates PUT Request with valid request body FOR USERROLEID")
 	public void admin_creates_put_request_with_valid_request_body() {
