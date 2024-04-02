@@ -26,6 +26,12 @@ public class Endpoint extends ConfigReader{
 	//User Module--Endpoints
 	public static String Post_CreatingUserwithRole= "/users/roleStatus";
 	
+	//Program_module
+	public static String Post_CreateNewProgram = "/saveprogram";
+	public static String Get_Program = "/programs/";
+	public static String Get_AllProgram="/allPrograms";
+	public static String Put_Program = "/program/";
+	
 	
 	//User Login--endpoint
 	public static String Post_Login= "/login";

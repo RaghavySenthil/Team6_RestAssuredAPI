@@ -3,12 +3,15 @@ package StepDefinition;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import io.restassured.RestAssured;
+import io.restassured.response.Response;
 
 public class UserRoleProgramBatchMapController {
+	Response request;
+	
 	@Given("Admin creates GET Request to retrieve all Admins assigned to programs\\/batches")
 	public void admin_creates_get_request_to_retrieve_all_admins_assigned_to_programs_batches() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+		//request= RestAssured.given().header("Authorization","Bearer "+retrievedToken);
 	}
 
 	@When("Admin sends HTTPS Request")

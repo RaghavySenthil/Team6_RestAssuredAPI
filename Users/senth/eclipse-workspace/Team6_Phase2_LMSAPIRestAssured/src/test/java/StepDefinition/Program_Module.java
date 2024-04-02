@@ -2,6 +2,7 @@ package StepDefinition;
 
 import static org.testng.Assert.assertEquals;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.List;
 import java.util.Map;
@@ -11,7 +12,7 @@ import org.apache.logging.log4j.Logger;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.json.simple.JSONObject;
 
-
+import EndPoints.Endpoint;
 import TestRequest.ReqResSpecification;
 import TestRunner.LMSTestRunner;
 import Utilities.UserExcelReader;
@@ -63,7 +64,7 @@ public void admin_sends_Get_request_with_endpoint() {
  	.given()
  		.spec(reqSpec)
 	.when()
-		.get("/allPrograms")
+		.get(Endpoint.Get_AllProgram)
 	.then()
 		.spec(resSpec)
 		.extract().response();
@@ -91,7 +92,7 @@ public void admin_sends_https_request_with_endpoint_by_programid() {
 	 	.given()
 	 		.spec(reqSpec)
 		.when()
-			.get("/programs/"+strprogId)
+			.get(Endpoint.Get_Program+strprogId)
 		.then()
 			.spec(resSpec)
 			.extract().response();
@@ -100,8 +101,8 @@ public void admin_sends_https_request_with_endpoint_by_programid() {
 
 @Then("Admin receives {int} OK Status with response body and getschema validation")
 public void admin_receives_ok_status_with_response_body_and_getschema_validation(Integer int1) {
-	  response.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(getClass().getClassLoader().getResourceAsStream("C:\\Users\\senth\\eclipse-workspace\\Team6_Phase2_LMSAPIRestAssured\\src\\test\\resources\\Test_Data\\GetSchema_ProgramModule.json"))); 
-
+	  //response.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(getClass().getClassLoader().getResourceAsStream("C:\\Users\\senth\\eclipse-workspace\\Team6_Phase2_LMSAPIRestAssured\\src\\test\\resources\\Test_Data\\GetSchema_ProgramModule.json"))); 
+	  response.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(new File("C:\\Users\\senth\\eclipse-workspace\\Team6_Phase2_LMSAPIRestAssured\\src\\test\\resources\\Test_Data\\GetSchema_ProgramModule.json")));
 }
 
 
@@ -135,7 +136,7 @@ public void admin_creates_post_request_for_the_lms_with_request_body(io.cucumber
 public void admin_sends_https_request_and_request_body_with_endpoint() {
 	
 	   response = RestAssured .given() .spec(reqSpec) .when()
-	  .post("/saveprogram") .then() .spec(resSpec)
+			   .post(Endpoint.Post_CreateNewProgram) .then() .spec(resSpec)
 	  .extract().response(); 
 	  
 		
@@ -157,7 +158,8 @@ public void admin_receives_createdstatus_with_response_body(Integer int1) {
 	  assertEquals( dt_programName,respJson.getString("programName"));
 	  assertEquals(dt_programStatus ,respJson.getString("programStatus"));
 
-	  response.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(getClass().getClassLoader().getResourceAsStream("C:\\Users\\senth\\eclipse-workspace\\Team6_Phase2_LMSAPIRestAssured\\src\\test\\resources\\Test_Data\\PostSchema_ProgramModule.json"))); 
+	  response.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(new File("C:\\Users\\senth\\eclipse-workspace\\Team6_Phase2_LMSAPIRestAssured\\src\\test\\resources\\Test_Data\\PostSchema_ProgramModule.json")));
+	  //response.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(getClass().getClassLoader().getResourceAsStream("C:\\Users\\senth\\eclipse-workspace\\Team6_Phase2_LMSAPIRestAssured\\src\\test\\resources\\Test_Data\\PostSchema_ProgramModule.json"))); 
 	}
 
 //**************************UPDATE REQUEST(SCHEMA VALIDATION)************************************//@Given("Admin creates UPDATE Request for the LMS with request body")
@@ -190,7 +192,7 @@ public void admin_creates_update_request_for_the_lms_with_request_body(io.cucumb
 @When("Admin sends HTTPS Request and  request Body with valid endpoint")
 public void admin_sends_https_request_and_request_body_with_valid_endpoint() {
 	 response = RestAssured .given() .spec(reqSpec) .when()
-			  .put("/program/"+dt_programName) .then() .spec(resSpec)
+			 .put(Endpoint.Put_Program+dt_programName) .then() .spec(resSpec)
 			  .extract().response(); 
 }
 
@@ -207,8 +209,10 @@ public void admin_receives_ok_status_with_response_body_and_schema_validation(In
 	  assertEquals( dt_programName,respJson.getString("programName"));
 	  assertEquals(dt_programStatus ,respJson.getString("programStatus"));
 
-	  response.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(getClass().getClassLoader().getResourceAsStream("C:\\Users\\senth\\eclipse-workspace\\Team6_Phase2_LMSAPIRestAssured\\src\\test\\resources\\Test_Data\\PutSchema_ProgramModule.json"))); 
+	  //response.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(getClass().getClassLoader().getResourceAsStream("C:\\Users\\senth\\eclipse-workspace\\Team6_Phase2_LMSAPIRestAssured\\src\\test\\resources\\Test_Data\\PutSchema_ProgramModule.json"))); 
+	  response.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(new File("C:\\Users\\senth\\eclipse-workspace\\Team6_Phase2_LMSAPIRestAssured\\src\\test\\resources\\Test_Data\\PutSchema_ProgramModule.json")));
 }
+
 
 
 

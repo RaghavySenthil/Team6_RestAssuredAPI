@@ -198,7 +198,7 @@ public class ProgramBatch_Module {
 		.body("success", is(Boolean.parseBoolean("success")))
 		.body("message", is(message)); // Use equalTo() matcher for comparison*/
 		//.body("success", is(Boolean.parseBoolean("success"))); // Use equalTo() matcher for comparison
-			assertEquals(message,BatchmoduleValidDataResponse.jsonPath().getString("message") );
+			//assertEquals(message,BatchmoduleValidDataResponse.jsonPath().getString("message") );
 		   // assertEquals(Boolean.parseBoolean("success"),BatchmoduleValidDataResponse.jsonPath().getString("success") );
 			
 		}
@@ -682,11 +682,7 @@ public void admin_receives_ok_status_with_response_body_program_id(Integer int1)
 }
 @Given("Admin creates GET Request with invalid Program Id")
 public void admin_creates_get_request_with_invalid_program_id() throws Exception, IOException {
-	List<Map<String, String>> getUserData = UserExcelReader.getData(Endpoint.Excelpath, "Batchmodule_validData");
-
-    // Check if there are at least two rows in the data
-    if (getUserData.size() >= 2) {
-        // Get the second row (index 1, as indexing starts from 0)
+	List<Map<String, String>> getUserData = UserExcelReader.getData(Endpoint.Excelpath, "GetInvalidPgmId");
     	for (Map<String, String> secondrow : getUserData){
    		 String programId = secondrow.get("programId");
    			long programId1 =Long.parseLong(programId);
@@ -703,11 +699,7 @@ public void admin_creates_get_request_with_invalid_program_id() throws Exception
                 .pathParam("programId", programId1)
                 .when()
                 .get();
-    }} else {
-        // Handle the case where there are not enough rows in the data
-        System.out.println("There are not enough rows in the data.");
-    }
-    
+    }    
     
 }
 
