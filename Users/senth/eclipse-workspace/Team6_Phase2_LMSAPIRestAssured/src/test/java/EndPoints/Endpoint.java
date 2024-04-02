@@ -14,10 +14,18 @@ public class Endpoint extends ConfigReader{
 	public static final String PUT_URPBS_INVALID_ENDPOINT = BaseURL + "/users/roleProgramBatchStatus///{userId}";
 	// User Login--endpoint
 	public static String Post_Login = "/login";
-	public static String Post_CreatingUserwithRole = "/users/roleStatus";
+	//public static String Post_CreatingUserwithRole = "/users/roleStatus";
 	public static String Post_Login_invalidendpoint = "/loginpage";
 	public static String Excelpath = ".\\src\\test\\resources\\Test_Data\\LMS_valid_data.xlsx";
 	public static String Get_AllRoles = "/users/roles";
+    public static String Post_CreatingUserwithRole= "/users/roleStatus";
+	
+    public static String Get_AllActiveUsers = "/users/activeUsers";
+	public static String Get_UserbyProgramBatches = "users/programBatch/{Id/}";
+	public static String Get_UsersforProgram = "/users/programs/{programId}";
+	public static String Get_UsersbyroleId  = "/users/roles/{roleId}";
+	public static String Get_UsersbyroleId_V2 = "/v2/users";
+	public static String PUT_UpdateUser = "/users/{userId}";
 	public static String Get_AllRoles_invalid = "/usersrolesinvalid";
 	public static String Get_AllUsers = "/users";
 	public static String Get_AllUsers_invalid = "/usersinvalid";
